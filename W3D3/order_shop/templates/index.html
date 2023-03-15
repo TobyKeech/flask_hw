@@ -10,7 +10,8 @@
 
     <h1>Shoe Order List - {{ title }} </h1>
     {% for order in orders %}
-    <p> <b> {{ order.customer_name }} </b> : {{ order.order_date }} : {{ order.quantity }}</p>  
+    <p> <b> {{ order.customer_name }} </b> : {{ order.model }} : {{ order.size }} : 
+        {{ order.quantity }} : {{ order.order_date }} : {{ order.delivery_date }}</p>  
     {% endfor %}
     
 </body>
