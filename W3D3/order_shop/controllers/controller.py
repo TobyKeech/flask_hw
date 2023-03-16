@@ -5,10 +5,12 @@ from models.order_list import order_list
 
 @app.route('/orders')
 def index():
-    return render_template('index.html', title = 'Nike', orders = order_list)
+    return render_template('index.html', 
+                           title = 'Nike', 
+                           orders = order_list)
 
 @app.route('/orders/<id>')
 def order(id):
-    return render_template('order.html', title = 'Nike', my_order = order_list[int(id)])
-
-# why turn this into a int and which way round is it taken in
+    return render_template('order.html', 
+                           title = 'Nike', 
+                           my_order = order_list[int(id)])
