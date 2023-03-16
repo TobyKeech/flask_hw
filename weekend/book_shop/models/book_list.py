@@ -6,3 +6,7 @@ book2 = Book ("Bourne Identity", "Robert Ludlum", "Thriller")
 book3 = Book ("Catcher in the Rye", "J D Salinger", "Coming of Age ")
 
 book_list = [book1, book2]
+
+
+def add_new_book(book):
+    book_list.append(book)
