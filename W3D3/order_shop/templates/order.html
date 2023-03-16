@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='your_file_name.css') }}">
-    <title>Document</title>
+    <title> {{ title }} - Customer Orders </title>
 </head>
 
 <body>
+    
     <h1> {{ title }} </h1>
     <h3> <a href = "/orders" > Order </a> </h3>
 
     <p><b>{{my_order.customer_name}} 
 
-    </b> : {{my_order.model}} 
+    </b>  {{my_order.model}} 
         : {{ my_order.size }} : {{ my_order.quantity }} : {{ my_order.order_date }} 
         : {{ my_order.delivery_date }}
     </p>

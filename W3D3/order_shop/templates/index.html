@@ -13,7 +13,7 @@
     {% for order in orders %}
     <p> <a href="/orders/{{loop.index0}}"> {{ order.customer_name }}</a> </p>  
 
-    <p>: {{ order.model }} : {{ order.size }} : 
+    <p> {{ order.model }} : {{ order.size }} : 
         {{ order.quantity }} : {{ order.order_date }} : {{ order.delivery_date }} </p>  
     {% endfor %}
     
