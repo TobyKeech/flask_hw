@@ -4,11 +4,18 @@ from app import app
 from models.book_list import *
 from models.book import *
 
+
 @app.route('/books')
+def home():
+    return render_template('base.html',
+                           title = 'CodeClan Libary')
+
+@app.route('/books/list')
 def index():
     return render_template('index.html', 
                            title = 'CodeClan Libary', 
                            books_in_store = book_list)
+
 
 @app.route('/books/<id>')
 def order(id):
@@ -16,7 +23,8 @@ def order(id):
                            title = 'CodeClan Libary', 
                            solo_book = book_list[int(id)])
 
-@app.route('/books', methods = ['POST'])
+@app.route('/books/list', methods = ['POST'])
+
 def add_book():
     book_title = request.form['title']
     book_author = request.form['author'] 
@@ -26,5 +34,10 @@ def add_book():
 
     add_new_book(new_book)
 
-    return redirect ('/books')
+    return redirect ('/books/list')
+
+
+
+
+
         
