@@ -54,9 +54,9 @@ def add_book():
 
 #     return redirect ('/books/list')
 
-@app.route('/books/delete/<index>', methods=['POST'])
-def books_delete(index):
-    delete_book(int(index))
+@app.route('/books/delete/<id>', methods=['get'])
+def books_delete(id):
+    delete_book(int(id))
     return redirect('/books')
 
 
