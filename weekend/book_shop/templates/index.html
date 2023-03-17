@@ -7,23 +7,25 @@
     <title> {{ title }} - Books List </title>
 </head>
 <body>
-    <h1> {{title}} Home Page </h1>
+    <h1> {{title}} </h1>
     <ul>
-    <li> <h3> <a href = "/books"> Home</a> </h3></li>
+    <li> <h3> <a href = "/"> Home</a> </h3></li>
     </ul>
 
     {% for book in books_in_store %}
        
-        <p> <b>   <a href="/books/{{loop.index0}}"> {{ book.title }} </a> </b> </p>  
+        <p> <b>  <a href= "/books/{{loop.index0}}"> {{ book.title }} </a> </b> </p>  
 
         <p> <b> Written by </b> {{ book.author }} </p>
      
         <p> <b> Genre </b> : {{ book.genre }}  </p>
 
+        <p> <b> <a href= "/books/delete/{{loop.index0}}"> Delete </a> </b></p>
+
     {% endfor %}
 
 
-    <form action="/books/list" method = "post"> 
+    <form action="/books" method = "post"> 
         <P>
             <label for ="title">Title:</label>
         <input type = "text" name = "title" placeholder=" Enter the title" />
@@ -40,33 +42,37 @@
 
         <P> <label for = "genre">Genre:</label>
         <input type = "text" name = "genre" placeholder = "Enter the genre" />
+        </P>
     
+        <p>
         <input type = "submit" value = "add book" />
         </P>
     
 
     </form> 
 
-    <form action="/books/list" method = "delete"> 
-        <P>
-            <label for ="title">Title:</label>
+    <!-- <form action="/books" method = "delete">  -->
+        <!-- <P>
+        <label for ="title">Title:</label>
         <input type = "text" name = "title" placeholder=" Enter the title" />
         </P>
     
 
-
         <P>
-            <label for = "author">Author:</label>
+        <label for = "author">Author:</label>
         <input type = "text" name = "author" placeholder = "Enter the author" />
         </P>
 
 
-
-        <P> <label for = "genre">Genre:</label>
+        <P> 
+        <label for = "genre">Genre:</label>
         <input type = "text" name = "genre" placeholder = "Enter the genre" />
-    
-        <input type = "submit" value = "remove book" />
-        </P>
+        </P> -->
+
+
+        <!-- <P> -->
+        <!-- <input type = "submit" value = "remove book" /> -->
+        <!-- </P> -->
     
 
     </form> 

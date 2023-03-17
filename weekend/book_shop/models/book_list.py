@@ -10,5 +10,5 @@ book_list = [book1, book2, book3]
 def add_new_book(book):
     book_list.append(book)
 
-def delete_book(book):
-    book_list.remove(book)
+def delete_book(book_index):
+    book_list.pop(book_index)
