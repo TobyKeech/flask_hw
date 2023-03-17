@@ -19,6 +19,20 @@
         <p> <b> Genre </b> : {{ book.genre }}  </p>
 
     {% endfor %}
+
+    <form action="/books" method = "post"> 
+        <label for ="title">Title:</label>
+        <input type = "text" name = "title" placeholder="Enter the title" />
+    
+        <label for = "author">Author:</label>
+        <input type = "text" name = "author" placeholder = "Enter the author" />
+
+        <label for = "genre">Genre:</label>
+        <input type = "text" name = "genre" placeholder = "Enter the genre" />
+    
+        <input type = "submit" value = "Add task" />
+    
+    </form> 
     
 </body>
 </html>
