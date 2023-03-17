@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ title }} - Orders </title>
+    <title> {{ title }} - Books </title>
 </head>
 <body>
     <h1> {{title}} Home Page </h1>
 
     {% for book in books_in_store %}
-        <p> <b>{{ book.title }}</b> </p>  
+        <!-- <p> <a href="/orders/{{loop.index0}}"> </a> </p>  -->
+
+        <p> <b>   <a href="/books/{{loop.index0}}"> {{ book.title }} </a> </b> </p>  
 
         <p> <b> Written by </b> {{ book.author }} </p>
      

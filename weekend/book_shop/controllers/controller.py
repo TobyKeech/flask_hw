@@ -1,16 +1,17 @@
 from flask import *
 
 from app import app
-from models.book_list import book_list
+from models.book_list import *
+from models.book import *
 
-@app.route('/orders')
+@app.route('/books')
 def index():
     return render_template('index.html', 
-                           title = 'Waterstones', 
+                           title = 'CodeClan Libary', 
                            books_in_store = book_list)
 
-@app.route('/orders/<id>')
+@app.route('/books/<id>')
 def order(id):
     return render_template('order.html', 
-                           title = 'Waterstones', 
+                           title = 'CodeClan Libary', 
                            solo_book = book_list[int(id)])
