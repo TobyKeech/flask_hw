@@ -16,8 +16,8 @@ def order(id):
                            title = 'CodeClan Libary', 
                            solo_book = book_list[int(id)])
 
-@app.route('/books', method = ['POST'])
-def add_new_book():
+@app.route('/books', methods = ['POST'])
+def add_book():
     book_title = request.form['title']
     book_author = request.form['author'] 
     book_genre = request.form['genre']
