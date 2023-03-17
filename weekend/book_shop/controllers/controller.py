@@ -37,6 +37,18 @@ def add_book():
     return redirect ('/books/list')
 
 
+@app.route('/books/list', methods = ['DELETE'])
+
+def delete_book():
+    book_title = request.form['title']
+    book_author = request.form['author'] 
+    book_genre = request.form['genre']
+
+    book_to_delete = Book(book_title, book_author, book_genre)
+
+    delete_book(book_to_delete)
+
+    return redirect ('books/list')
 
 
 
