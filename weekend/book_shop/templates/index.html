@@ -1,81 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ title }} - Books List </title>
-</head>
-<body>
-    <h1> {{title}} </h1>
-    <ul>
-    <li> <h3> <a href = "/"> Home</a> </h3></li>
-    </ul>
-
+{% extends "base.html" %}
+{% block content %}
+    <div class= book-wrapper>
     {% for book in books_in_store %}
-       
+       <div class = books>
         <p> <b>  <a href= "/books/{{loop.index0}}"> {{ book.title }} </a> </b> </p>  
 
-        <p> <b> Written by </b> {{ book.author }} </p>
+        <p> <b> Written by </b> : {{ book.author }} </p>
      
         <p> <b> Genre </b> : {{ book.genre }}  </p>
 
-        <p> <b> <a href= "/books/delete/{{loop.index0}}" > Delete </a> </b></p>
+        <p><b>Book Available : </b>
 
+                {% if book.checked_out %}
+                <span>&#9989;</span>
+    
+            {%else%}
+                <span>&#10060;</span>
+    
+            {% endif %}    
+        </p>
+
+        <form action="/books/delete/{{loop.index0}}" method = "post"> 
+        <input type = "submit" value = "remove book" />
+        </form>
+    </div>
     {% endfor %}
+    </div>
+        
+{% endblock %}
 
 
-    <form action="/books" method = "post"> 
-        <P>
-            <label for ="title">Title:</label>
-        <input type = "text" name = "title" placeholder=" Enter the title" />
-        </P>
-    
-
-
-        <P>
-            <label for = "author">Author:</label>
-        <input type = "text" name = "author" placeholder = "Enter the author" />
-        </P>
-
-
-
-        <P> <label for = "genre">Genre:</label>
-        <input type = "text" name = "genre" placeholder = "Enter the genre" />
-        </P>
-    
-        <p>
-        <input type = "submit" value = "add book" />
-        </P>
-    
-
-    </form> 
-
-    <!-- <form action="/books" method = "delete">  -->
-        <!-- <P>
-        <label for ="title">Title:</label>
-        <input type = "text" name = "title" placeholder=" Enter the title" />
-        </P>
-    
-
-        <P>
-        <label for = "author">Author:</label>
-        <input type = "text" name = "author" placeholder = "Enter the author" />
-        </P>
-
-
-        <P> 
-        <label for = "genre">Genre:</label>
-        <input type = "text" name = "genre" placeholder = "Enter the genre" />
-        </P> -->
-
-
-        <!-- <P> -->
-        <!-- <input type = "submit" value = "remove book" /> -->
-        <!-- </P> -->
-    
-
-    </form> 
-    
-</body>
-</html>

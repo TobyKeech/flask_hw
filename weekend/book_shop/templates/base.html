@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>{{ title }} -  Home</title>
     <head>
-      <title>{{ title }} - My To-Do List</title>
+      <title>{{ title }} - New</title>
     </head>
     <body>
+      <div class="header">
       <h1>CodeClan Libary</h1>
         <ul>
           <li><a href = "/"> Home</a></li>
           <li><a href="/books">Book List</a></li>
-          <li><a href = "/books/new">Add New Book</a></li>
+          <li><a href = "/books/new "> New Book </a></li>
         </ul>
-
+      </div>
         <hr>
         {% block content %}
 
         {% endblock %}
+
+
     </body>
 </html>

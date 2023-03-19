@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = wrap>
+<div class = new_book>
+
+        <form action="/books/new" method = "post"> 
+            <P>
+             <label for ="title">Title:</label>
+            <input type = "text" name = "title" placeholder=" Enter the title" />
+            </P>
+    
+            <P>
+            <label for = "author">Author:</label>
+            <input type = "text" name = "author" placeholder = "Enter the author" />
+            </P>
+    
+            <P>
+            <label for = "genre">Genre:</label>
+            <input type = "text" name = "genre" placeholder = "Enter the genre" />
+            </P>
+        
+            <p>
+            <input type = "submit" value = "add book" />
+            </P>
+
+        </form>
+
+      </div>
+    </div>
+        {% endblock %}

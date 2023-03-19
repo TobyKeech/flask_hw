@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ title }}  </title>
-
-</head>
-
-<body>
-
-    <h1> {{title}} </h1>
-    <h4> <a href="/books"> Book List</a> </h4>
+{% extends "base.html" %}
+{% block content %}
 
     <p> <b>{{ solo_book.title }}</b> </p> 
 
     <p> <b> Written by </b> {{ solo_book.author }} </p>
      
     <p> <b> Genre </b> : {{ solo_book.genre }}  </p>
+    <p> <b>Book Available : </b>
 
-    
-</body>
-</html>
+        {% if solo_book.checked_out %}
+        <span>&#9989;</span>
+
+    {%else%}
+        <span>&#10060;</span>
+
+    {% endif %}    
+</p>
+
+{% endblock %}
